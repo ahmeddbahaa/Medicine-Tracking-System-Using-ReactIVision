@@ -27,6 +27,7 @@ import java.awt.event.*;
 import java.awt.image.*;
 import javax.swing.*;
 import TUIO.*;
+import java.sql.SQLException;
 
 public class TuioDemo  {
 
@@ -41,7 +42,7 @@ public class TuioDemo  {
 	private GraphicsDevice device;
 	private Cursor invisibleCursor;
 
-	public TuioDemo() {
+	public TuioDemo() throws SQLException, ClassNotFoundException {
 		demo = new TuioDemoComponent();
 		mydemo = new TuioPanelComponent();
 		device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
@@ -111,7 +112,7 @@ public class TuioDemo  {
 		frame.repaint();
 	}
 	
-	public static void main(String argv[]) {
+	public static void main(String argv[]) throws SQLException, ClassNotFoundException {
 		
 		TuioDemo demo = new TuioDemo();
 		TuioClient client = null;
